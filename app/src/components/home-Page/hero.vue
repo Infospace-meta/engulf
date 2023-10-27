@@ -10,7 +10,7 @@
         <!-- <router-link>Enroll with Us</router-link> -->
       </div>
     </div>
-    <div><img src="src/assets/heroImage.jpg" alt="heroImage" /></div>
+    <div><img src="src/assets/images/heroImage.jpg" alt="heroImage" /></div>
   </div>
 </template>
 
