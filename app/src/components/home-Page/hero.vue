@@ -6,10 +6,12 @@
         Discover a world of financial opportunities with Pro Forex Investments.
       </p>
       <div>
-        <router-link>Contact</router-link>
-        <router-link>Enroll with Us</router-link>
+        <router-link :to="{ name: 'home' }">Contact</router-link>
+        <!-- <router-link>Enroll with Us</router-link> -->
       </div>
     </div>
-    <div><img src="src/assets/images/heroImage.jpg" alt="heroImage" /></div>
+    <div><img src="src/assets/heroImage.jpg" alt="heroImage" /></div>
   </div>
 </template>
+
+<script setup></script>
