@@ -1,5 +1,10 @@
 <template>
   <div class="px-5 lg:px-96 lg:hidden">
+    <h1
+      class="text-2xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
+    >
+      Tracksheet & Strategies
+    </h1>
     <div class="grid lg:grid-cols-4 gap-5 sm:grid-cols-1">
       <div
         @click="selectCategory(catIndex)"
@@ -27,32 +32,19 @@
         </h1>
         <div
           v-if="currentCategoryIndex === catIndex"
-          class="grid lg:grid-cols-2 gap-3 sm:grid-cols-1"
+          class="grid lg:grid-cols-2 gap-3 sm:grid-cols-1 pt-5"
         >
-          <div v-for="(shop, shopIndex) in displayedShops" :key="shopIndex">
+          <div v-for="(track, trackIndex) in displayedTracks" :key="trackIndex">
             <div
               class="flex justify-between border border-cyan-600 rounded-xl p-2"
             >
-              <h1 class="text-lg">{{ shop.name }}</h1>
+              <h1 class="text-lg">{{ track.name }}</h1>
               <img src="src/assets/images/info.png" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="bg-slate-50 rounded-lg shadow-xl border-2 mt-5 p-10 relative">
-      <h1 class="">
-        {{ category[currentCategoryIndex].name }}
-      </h1>
-       Indicator for active category
-      <div
-        class="absolute top-0 left-0 h-1 bg-yellow-400"
-        :style="{
-          width: 100 / category.length + '%',
-          left: (currentCategoryIndex * 100) / category.length + '%',
-        }"
-      ></div>
-    </div> -->
   </div>
 </template>
 
@@ -60,30 +52,30 @@
 import { ref, onMounted, computed } from "vue";
 
 const category = ref([
-  { name: "Category 1", color: "bg-red-500" },
-  { name: "Category 4", color: "bg-indigo-500" },
-  { name: "Category 2", color: "bg-green-500" },
-  { name: "Category 3", color: "bg-blue-500" },
+  { name: "Strategy", color: "bg-red-500" },
+  { name: "Signals services", color: "bg-indigo-500" },
+  { name: "Live Streamings", color: "bg-green-500" },
+  { name: "Live streamings", color: "bg-blue-500" },
 ]);
 
-const shops = ref([
+const tracks = ref([
   { name: "Shop 1", category: 0 },
   { name: "Shop 2", category: 0 },
   { name: "Shop 3", category: 0 },
+  { name: "Shop 4", category: 0 },
+  { name: "Shop 5", category: 0 },
+  { name: "Shop 6", category: 0 },
+  { name: "Shop 3", category: 0 },
   { name: "Shop 4", category: 1 },
+  { name: "Shop 5", category: 1 },
+  { name: "Shop 6", category: 1 },
+  { name: "Shop 3", category: 2 },
+  { name: "Shop 4", category: 2 },
   { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
-  { name: "Shop 4", category: 3 },
-  { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
+  { name: "Shop 6", category: 2 },
+  { name: "Shop 3", category: 2 },
   { name: "Shop 4", category: 1 },
   { name: "Shop 5", category: 3 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
-  { name: "Shop 4", category: 1 },
-  { name: "Shop 5", category: 2 },
   { name: "Shop 6", category: 3 },
 ]);
 
@@ -93,9 +85,9 @@ const selectCategory = (categoryIndex) => {
   currentCategoryIndex.value = categoryIndex;
 };
 
-const displayedShops = computed(() => {
-  return shops.value.filter(
-    (shop) => shop.category === currentCategoryIndex.value
+const displayedTracks = computed(() => {
+  return tracks.value.filter(
+    (track) => track.category === currentCategoryIndex.value
   );
 });
 

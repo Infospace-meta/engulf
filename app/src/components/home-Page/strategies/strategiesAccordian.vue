@@ -1,36 +1,10 @@
-<!-- <template>
-  <div class="px-5 lg:px-96">
-    <div class="grid grid-cols-4 gap-5">
-      <div
-        @click="selectCategory(catIndex)"
-        v-for="(cat, catIndex) in category"
-        :key="catIndex"
-      >
-        <h1
-          :class="cat.color"
-          class="border rounded-xl text-white text-3xl p-10 flex flex-wrap"
-        >
-          {{ cat.name }}
-        </h1>
-      </div>
-    </div>
-    <div class="bg-slate-50 rounded-lg shadow-xl border-2 mt-5 p-10">
-      <div class="grid lg:grid-cols-2 gap-3">
-        <div v-for="(shop, shopIndex) in displayedShops" :key="shopIndex">
-          <div
-            class="flex justify-between border border-cyan-600 rounded-xl p-2"
-          >
-            <h1 class="text-lg">{{ shop.name }}</h1>
-            <img src="src/assets/images/info.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template> -->
-
 <template>
-  <div class="px-5 lg:px-96 max-lg:hidden">
+  <div class="px-5 lg:px-96 max-lg:hidden h-screen">
+    <h1
+      class="text-5xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
+    >
+      Tracksheet & Strategies
+    </h1>
     <div class="grid lg:grid-cols-4 gap-5">
       <div
         @click="selectCategory(catIndex)"
@@ -46,9 +20,11 @@
             },
           ]"
           :style="
-            currentCategoryIndex === catIndex ? 'border-color: white;' : ''
+            currentCategoryIndex === catIndex
+              ? 'border-color: white; border-weight:5px;'
+              : ''
           "
-          class="rounded-xl text-white text-3xl p-10 flex flex-wrap relative"
+          class="rounded-xl shadow-xl border-2 border-gray-400 text-white text-3xl p-10 flex flex-wrap relative"
         >
           {{ cat.name }}
           <div
@@ -58,17 +34,19 @@
         </h1>
       </div>
     </div>
-    <div class="bg-slate-50 rounded-lg shadow-xl border-2 mt-5 p-10 relative">
-      <h1 class="">
+    <div class="rounded-lg shadow-2xl border-2 mt-5 p-10 relative">
+      <h1 class="text-2xl text-center py-4">
         {{ category[currentCategoryIndex].name }}
       </h1>
-      <div class="grid lg:grid-cols-2 gap-3">
-        <div v-for="(shop, shopIndex) in displayedShops" :key="shopIndex">
+      <div class="grid lg:grid-cols-3 gap-3">
+        <div v-for="(track, trackIndex) in displayedTracks" :key="trackIndex">
           <div
-            class="flex justify-between border border-cyan-600 rounded-xl p-2"
+            class="flex justify-between border border-cyan-600 rounded-xl p-2 hover:text-purple-600"
           >
-            <h1 class="text-lg">{{ shop.name }}</h1>
-            <img src="src/assets/images/info.png" />
+            <h1 class="text-lg font-bold text-slate-600 hover:text-purple-600">
+              {{ track.name.toUpperCase() }}
+            </h1>
+            <img src="src/assets/images/next.png" />
           </div>
         </div>
       </div>
@@ -88,30 +66,30 @@
 import { ref, onMounted, computed } from "vue";
 
 const category = ref([
-  { name: "Category 1", color: "bg-red-500" },
-  { name: "Category 4", color: "bg-indigo-500" },
-  { name: "Category 2", color: "bg-green-500" },
-  { name: "Category 3", color: "bg-blue-500" },
+  { name: "Trading Strategies", color: "bg-red-500" },
+  { name: "Signals services", color: "bg-indigo-500" },
+  { name: "Live Streamings", color: "bg-green-500" },
+  { name: "Live streamings", color: "bg-blue-500" },
 ]);
 
-const shops = ref([
-  { name: "Shop 1", category: 0 },
-  { name: "Shop 2", category: 0 },
-  { name: "Shop 3", category: 0 },
+const tracks = ref([
+  { name: "Trend-trading", category: 0 },
+  { name: "6 pair hedge", category: 0 },
+  { name: "level trading", category: 0 },
+  { name: "martingle & griding", category: 0 },
+  { name: "miscellaneous/swing", category: 0 },
+  { name: "Shop 6", category: 1 },
+  { name: "Shop 3", category: 1 },
   { name: "Shop 4", category: 1 },
+  { name: "Shop 5", category: 1 },
+  { name: "Shop 6", category: 1 },
+  { name: "Shop 3", category: 2 },
+  { name: "Shop 4", category: 2 },
   { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
-  { name: "Shop 4", category: 3 },
-  { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
+  { name: "Shop 6", category: 2 },
+  { name: "Shop 3", category: 2 },
   { name: "Shop 4", category: 1 },
   { name: "Shop 5", category: 3 },
-  { name: "Shop 6", category: 3 },
-  { name: "Shop 3", category: 0 },
-  { name: "Shop 4", category: 1 },
-  { name: "Shop 5", category: 2 },
   { name: "Shop 6", category: 3 },
 ]);
 
@@ -121,9 +99,9 @@ const selectCategory = (categoryIndex) => {
   currentCategoryIndex.value = categoryIndex;
 };
 
-const displayedShops = computed(() => {
-  return shops.value.filter(
-    (shop) => shop.category === currentCategoryIndex.value
+const displayedTracks = computed(() => {
+  return tracks.value.filter(
+    (track) => track.category === currentCategoryIndex.value
   );
 });
 
