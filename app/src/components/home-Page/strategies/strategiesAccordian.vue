@@ -24,7 +24,7 @@
               ? 'border-color: white; border-weight:5px;'
               : ''
           "
-          class="rounded-xl shadow-xl border-2 border-gray-400 text-white text-3xl p-10 flex flex-wrap relative"
+          class="rounded-3xl shadow-xl border-2 border-gray-400 text-white font-bold text-3xl p-10 flex flex-wrap relative"
         >
           {{ cat.name }}
           <div
@@ -66,10 +66,10 @@
 import { ref, onMounted, computed } from "vue";
 
 const category = ref([
-  { name: "Trading Strategies", color: "bg-red-500" },
-  { name: "Signals services", color: "bg-indigo-500" },
-  { name: "Live Streamings", color: "bg-green-500" },
-  { name: "Live streamings", color: "bg-blue-500" },
+  { name: "Trading Strategies", color: "bg-gradient-to-r from-cyan-500 to-blue-500" },
+  { name: "Signals services", color: "bg-gradient-to-r from-red-500 to-orange-500" },
+  { name: "Live Streamings", color: "bg-gradient-to-r from-green-500 to-yellow-500" },
+  { name: "Live streamings", color: "bg-gradient-to-r from-purple-500 to-indigo-500" },
 ]);
 
 const tracks = ref([
@@ -78,19 +78,19 @@ const tracks = ref([
   { name: "level trading", category: 0 },
   { name: "martingle & griding", category: 0 },
   { name: "miscellaneous/swing", category: 0 },
-  { name: "Shop 6", category: 1 },
-  { name: "Shop 3", category: 1 },
-  { name: "Shop 4", category: 1 },
-  { name: "Shop 5", category: 1 },
-  { name: "Shop 6", category: 1 },
+  { name: "paid client screenshot", category: 1 },
+  { name: "investor accounts", category: 1 },
+  { name: "hesdge signals - excel", category: 1 },
+  { name: "hedge signals - web", category: 1 },
+  { name: "xauud - performance ", category: 1 },
   { name: "Shop 3", category: 2 },
   { name: "Shop 4", category: 2 },
   { name: "Shop 5", category: 2 },
   { name: "Shop 6", category: 2 },
   { name: "Shop 3", category: 2 },
-  { name: "Shop 4", category: 1 },
-  { name: "Shop 5", category: 3 },
-  { name: "Shop 6", category: 3 },
+  { name: "tab format", category: 1 },
+  { name: "web format", category: 3 },
+  { name: "Copy trade performance", category: 3 },
 ]);
 
 let currentCategoryIndex = ref(0); // Initialize with the first category

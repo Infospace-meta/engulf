@@ -6,10 +6,12 @@
   <About />
   <ChooseUs />
   <Faqs />
+  <ContactUs />
 </template>
 <script setup>
 import About from "../components/home-Page/about.vue";
 import ChooseUs from "../components/home-Page/chooseUs.vue";
+import ContactUs from "../components/home-Page/contactsUs.vue";
 import Faqs from "../components/home-Page/faqs.vue";
 import Hero from "../components/home-Page/hero.vue";
 import Strategies from "../components/home-Page/strategies/strategies.vue";
