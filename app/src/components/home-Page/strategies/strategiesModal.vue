@@ -4,7 +4,7 @@
       <div class="grid grid-cols-2 gap-3">
         <div class="flex justify-between borderborder-cyan-600 rounded-xl p-2">
           <h1 class="text-lg">
-            {{ modal.title }}
+            {{ modal.name }}
           </h1>
           <img src="src/assets/images/info.png" />
         </div>
