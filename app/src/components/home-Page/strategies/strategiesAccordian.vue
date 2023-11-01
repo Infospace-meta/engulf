@@ -30,7 +30,7 @@
 </template> -->
 
 <template>
-  <div class="px-5 lg:px-96">
+  <div class="px-5 lg:px-96 max-lg:hidden">
     <div class="grid lg:grid-cols-4 gap-5">
       <div
         @click="selectCategory(catIndex)"

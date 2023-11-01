@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 lg:px-96">
+  <div class="px-5 lg:px-96 lg:hidden">
     <div class="grid lg:grid-cols-4 gap-5 sm:grid-cols-1">
       <div
         @click="selectCategory(catIndex)"
@@ -25,23 +25,26 @@
             class="absolute w-0 h-0 border-solid border-t-4 border-transparent border-white bottom-0 left-1/2 transform -translate-x-1/2"
           ></div>
         </h1>
-      </div>
-    </div>
-    <div class="bg-slate-50 rounded-lg shadow-xl border-2 mt-5 p-10 relative">
-      <h1 class="">
-        {{ category[currentCategoryIndex].name }}
-      </h1>
-      <div class="grid lg:grid-cols-2 gap-3 sm:grid-cols-1">
-        <div v-for="(shop, shopIndex) in displayedShops" :key="shopIndex">
-          <div
-            class="flex justify-between border border-cyan-600 rounded-xl p-2"
-          >
-            <h1 class="text-lg">{{ shop.name }}</h1>
-            <img src="src/assets/images/info.png" />
+        <div
+          v-if="currentCategoryIndex === catIndex"
+          class="grid lg:grid-cols-2 gap-3 sm:grid-cols-1"
+        >
+          <div v-for="(shop, shopIndex) in displayedShops" :key="shopIndex">
+            <div
+              class="flex justify-between border border-cyan-600 rounded-xl p-2"
+            >
+              <h1 class="text-lg">{{ shop.name }}</h1>
+              <img src="src/assets/images/info.png" />
+            </div>
           </div>
         </div>
       </div>
-      <!-- Indicator for active category -->
+    </div>
+    <!-- <div class="bg-slate-50 rounded-lg shadow-xl border-2 mt-5 p-10 relative">
+      <h1 class="">
+        {{ category[currentCategoryIndex].name }}
+      </h1>
+       Indicator for active category
       <div
         class="absolute top-0 left-0 h-1 bg-yellow-400"
         :style="{
@@ -49,7 +52,7 @@
           left: (currentCategoryIndex * 100) / category.length + '%',
         }"
       ></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
