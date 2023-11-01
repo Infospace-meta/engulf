@@ -5,12 +5,14 @@
     >
       <div v-for="(cat, catIndex) in category" :key="catIndex">
         <div class="py-5">
-          <details class="group">
+          <details class="group" @click="toggleCategory(catIndex)">
             <summary
               class="flex justify-between items-center font-medium cursor-pointer list-none"
             >
               <span>{{ cat.name }}</span>
-              <span class="transition group-open:rotate-180">
+              <span
+                :class="{ 'group-open:rotate-180': openCategories[catIndex] }"
+              >
                 <svg
                   fill="none"
                   height="24"
@@ -28,20 +30,17 @@
             </summary>
             <div
               class="text-neutral-600 bg-slate-50 mt-3 group-open:animate-fadeIn absolute left-96 z-10 w-[700px]"
+              v-show="openCategories[catIndex]"
             >
               <div class="grid grid-cols-2 gap-3">
                 <div
                   v-for="(shop, shopIndex) in getShopsByCategory(catIndex)"
                   :key="shopIndex"
-                  :shop="shop"
-                  :location="shop.location"
                 >
                   <div
                     class="flex justify-between border border-cyan-600 rounded-xl p-2"
                   >
-                    <h1 class="text-lg">
-                      {{ shop.name }}
-                    </h1>
+                    <h1 class="text-lg">{{ shop.name }}</h1>
                     <img src="src/assets/images/info.png" />
                   </div>
                 </div>
@@ -81,6 +80,14 @@ const shops = ref([
   { name: "indicator based signals", category: 2 },
   { name: "indicator based signals", category: 3 },
 ]);
+
+const openCategories = ref(Array(category.value.length).fill(false));
+
+const toggleCategory = (catIndex) => {
+  openCategories.value = openCategories.value.map(
+    (_, index) => index === catIndex
+  );
+};
 
 const getShopsByCategory = (categoryIndex) => {
   return shops.value.filter((shop) => shop.category === categoryIndex);
