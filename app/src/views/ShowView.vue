@@ -1,13 +1,30 @@
 <template>
-  <Hero />
-  <Strategies />
+  <div id="hero" class="scroll-target">
+    <Hero />
+  </div>
+  <div id="strategy" class="scroll-target">
+    <Strategies />
+  </div>
+  <div id="strategies" class="scroll-target">
+    <StrategyAccordion />
+  </div>
+  <div id="about" class="scroll-target">
+    <About />
+  </div>
+  <div id="subscription" class="scroll-target">
+    <Subscription />
+  </div>
+  <div id="chooseus" class="scroll-target">
+    <ChooseUs />
+  </div>
+  <div id="faqs" class="scroll-target">
+    <Faqs />
+  </div>
+  <div id="contact" class="scroll-target">
+    <ContactUs />
+  </div>
+
   <!-- <StrategiesModal /> -->
-  <StrategyAccordion />
-  <About />
-  <Subscription />
-  <ChooseUs />
-  <Faqs />
-  <ContactUs />
 </template>
 <script setup>
 import Subscription from "../components/home-Page/Subscription.vue";
