@@ -14,6 +14,9 @@
   <div id="subscription" class="scroll-target">
     <Subscription />
   </div>
+  <div id="subscription" class="scroll-target">
+    <Testimonials />
+  </div>
   <div id="chooseus" class="scroll-target">
     <ChooseUs />
   </div>
@@ -36,4 +39,5 @@ import Hero from "../components/home-Page/hero.vue";
 import Strategies from "../components/home-Page/strategies/strategies.vue";
 //import StrategiesModal from "../components/home-Page/strategies/strategiesModal.vue";
 import StrategyAccordion from "../components/home-Page/strategies/strategiesAccordian.vue";
+import Testimonials from "../components/home-Page/testimonials.vue";
 </script>
