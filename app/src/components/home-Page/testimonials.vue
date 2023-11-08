@@ -28,6 +28,7 @@
             >
               <button
                 class="bg-gradient-to-r from-green-700 to-green-500 text-white py-1 px-5 rounded-md"
+                @click="openBlogModal(blog)"
               >
                 Read More
               </button>
@@ -36,6 +37,20 @@
         </div>
       </div>
     </div>
+
+    <!-- blog modal designed  -->
+    <div
+      v-if="isBlogOpen"
+      class="fixed z-50 top-28 inset-0 flex items-center justify-center bg-white bg-opacity-60"
+    >
+      <div class="bg-white p-4 rounded-md w-5/6 h-full ">
+        <button @click="closeBlogModal" class="text-red-500">go back</button>
+        <h3 class="text-xl font-semibold mb-2">{{ blogTitle }}</h3>
+        <p v-if="blogDetails">{{ blogDetails }}</p>
+      </div>
+    </div>
+
+    <!-- testimonial-content -->
     <div class="testimonials lg:pt-48 my-20">
       <div class="flex flex-col lg:px-96">
         <div class="text-2xl text-red-500 font-semibold m-4 text-center">
@@ -139,4 +154,20 @@ function truncateText(text, maxWords) {
     return words.slice(0, maxWords).join(" ") + "...";
   }
 }
+
+const selectedBlog = ref(null);
+const isBlogOpen = ref(false);
+const blogTitle = ref("");
+const blogDetails = ref("");
+
+const openBlogModal = (blog) => {
+  selectedBlog.value = blog;
+  isBlogOpen.value = true;
+  blogTitle.value = blog.title;
+  blogDetails.value = blog.summary;
+};
+
+const closeBlogModal = () => {
+  isBlogOpen.value = false;
+};
 </script>
