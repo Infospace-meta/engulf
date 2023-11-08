@@ -95,7 +95,7 @@ import { ref } from "vue";
 
 const blogs = ref([
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
     title: "The first blog",
     summary:
