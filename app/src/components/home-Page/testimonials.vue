@@ -41,7 +41,7 @@
     <!-- blog modal designed  -->
     <div
       v-if="isBlogOpen"
-      class="fixed z-50 top-28 inset-0 flex items-center justify-center bg-white bg-opacity-60"
+      class="fixed z-50 top-20 lg:top-28 inset-0 flex items-center justify-center bg-white bg-opacity-60"
     >
       <div class="bg-white p-4 rounded-md w-5/6 h-full ">
         <button @click="closeBlogModal" class="text-red-500">go back</button>
