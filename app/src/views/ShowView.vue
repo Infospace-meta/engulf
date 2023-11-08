@@ -6,8 +6,11 @@
     <Strategies />
   </div>
   <div id="strategies" class="scroll-target">
-    <StrategyAccordion />
+    <StrategiesModal />
   </div>
+  <!-- <div id="strategies" class="scroll-target">
+    <StrategyAccordion />
+  </div> -->
   <div id="about" class="scroll-target">
     <About />
   </div>
@@ -37,7 +40,7 @@ import ContactUs from "../components/home-Page/contactsUs.vue";
 import Faqs from "../components/home-Page/faqs.vue";
 import Hero from "../components/home-Page/hero.vue";
 import Strategies from "../components/home-Page/strategies/strategies.vue";
-//import StrategiesModal from "../components/home-Page/strategies/strategiesModal.vue";
-import StrategyAccordion from "../components/home-Page/strategies/strategiesAccordian.vue";
+import StrategiesModal from "../components/home-Page/strategies/strategiesModal.vue";
+//import StrategyAccordion from "../components/home-Page/strategies/strategiesAccordian.vue";
 import Testimonials from "../components/home-Page/testimonials.vue";
 </script>

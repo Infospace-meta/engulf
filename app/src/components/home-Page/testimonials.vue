@@ -8,7 +8,7 @@
           <div
             v-for="(blog, blogIndex) in blogs"
             :key="blogIndex"
-            class="shadow-2xl rounded-b-xl w-96"
+            class="shadow-2xl rounded-b-xl w-80"
           >
             <div class="rounded-t-xl">
               <img :src="blog.imageUrl" :alt="blog.altText" class="w-auto" />
