@@ -8,7 +8,7 @@
           >
         </h1>
         <img
-          src="src/assets/images/info.png"
+          src="./../../assets/images/info.png"
           alt=""
           class="w-20 hover:animate-pulse"
         />
