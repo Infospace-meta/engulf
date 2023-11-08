@@ -8,7 +8,7 @@
       <li
         v-for="section in sections"
         :key="section.id"
-        class="lg:mr-5 p-4 text-lg max-lg:border-b border-orange-700 font-medium hover:text-blue-700"
+        class="lg:mr-5 p-4 text-lg max-lg:border-b border-orange-700 cursor-pointer font-medium hover:text-blue-700"
       >
         <a
           @click="scrollToSection(section.id)"
