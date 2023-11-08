@@ -58,9 +58,8 @@
       >
         <div class="bg-white p-4 rounded-md w-1/2">
           <h3 class="text-xl font-semibold mb-2">{{ modalTitle }}</h3>
-          <button @click="closeModal" class="text-red-500">
-            close
-          </button>
+          <p v-if="modalDetails">{{ modalDetails }}</p>
+          <button @click="closeModal" class="text-red-500">close</button>
         </div>
       </div>
       <!-- Indicator for active category -->
@@ -98,30 +97,31 @@ const category = ref([
 ]);
 
 const tracks = ref([
-  { name: "Trend-trading", category: 0 },
-  { name: "6 pair hedge", category: 0 },
-  { name: "level trading", category: 0 },
-  { name: "martingle & griding", category: 0 },
-  { name: "miscellaneous/swing", category: 0 },
-  { name: "paid client screenshot", category: 1 },
-  { name: "investor accounts", category: 1 },
-  { name: "hesdge signals - excel", category: 1 },
-  { name: "hedge signals - web", category: 1 },
-  { name: "xauud - performance ", category: 1 },
-  { name: "Shop 3", category: 2 },
-  { name: "Shop 4", category: 2 },
-  { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 2 },
-  { name: "Shop 3", category: 2 },
-  { name: "tab format", category: 1 },
-  { name: "web format", category: 3 },
-  { name: "Copy trade performance", category: 3 },
+  { name: "Trend-trading", details: "some details", category: 0 },
+  { name: "6 pair hedge", details: "some details", category: 0 },
+  { name: "level trading", details: "some details", category: 0 },
+  { name: "martingle & griding", details: "some details", category: 0 },
+  { name: "miscellaneous/swing", details: "some details", category: 0 },
+  { name: "paid client screenshot", details: "some details", category: 1 },
+  { name: "investor accounts", details: "some details", category: 1 },
+  { name: "hesdge signals - excel", details: "some details", category: 1 },
+  { name: "hedge signals - web", details: "some details", category: 1 },
+  { name: "xauud - performance ", details: "some details", category: 1 },
+  { name: "Shop 3", details: "some details", category: 2 },
+  { name: "Shop 4", details: "some details", category: 2 },
+  { name: "Shop 5", details: "some details", category: 2 },
+  { name: "Shop 6", details: "some details", category: 2 },
+  { name: "Shop 3", details: "some details", category: 2 },
+  { name: "tab format", details: "some details", category: 1 },
+  { name: "web format", details: "some details", category: 3 },
+  { name: "Copy trade performance", details: "some details", category: 3 },
 ]);
 
 const currentCategoryIndex = ref(0);
 const selectedTrack = ref(null);
 const isModalOpen = ref(false);
 const modalTitle = ref("");
+const modalDetails = ref("");
 
 const selectCategory = (categoryIndex) => {
   currentCategoryIndex.value = categoryIndex;
@@ -131,11 +131,15 @@ const selectCategory = (categoryIndex) => {
 const openReadMoreModal = (track) => {
   selectedTrack.value = track;
   isModalOpen.value = true;
+  modalTitle.value = track.name;
+  modalDetails.value = track.details;
   // Implement modal opening logic here
 };
+
 const closeModal = () => {
   isModalOpen.value = false;
-}
+  modalTitle.value = "";
+};
 
 const displayedTracks = computed(() => {
   return tracks.value.filter(
