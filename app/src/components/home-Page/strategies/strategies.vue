@@ -39,7 +39,7 @@
               class="flex justify-between border border-cyan-600 rounded-xl p-2"
             >
               <h1 class="text-lg">{{ track.name }}</h1>
-              <img src="src/assets/images/info.png" />
+              <img src="../../../assets/images/info.png" />
             </div>
           </div>
         </div>

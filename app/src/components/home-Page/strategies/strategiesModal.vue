@@ -44,7 +44,7 @@
               >
                 {{ track.name.toUpperCase() }}
               </h1>
-              <img src="src/assets/images/next.png" />
+              <img src="../../../assets/images/next.png" />
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
             <h1 class="text-lg font-bold text-slate-600 hover:text-purple-600">
               {{ track.name.toUpperCase() }}
             </h1>
-            <img src="src/assets/images/next.png" />
+            <img src="../../../assets/images/next.png" />
           </div>
         </div>
       </div>
