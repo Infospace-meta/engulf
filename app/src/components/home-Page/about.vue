@@ -1,5 +1,5 @@
 <template>
-  <div class="px-1 lg:px-96">
+  <div class="px-1 lg:px-96 min-h-screen">
     <div class="grid lg:grid-cols-2 p-10">
       <div class="flex flex-col gap-4 justify-center items-center">
         <h1 class="text-3xl">

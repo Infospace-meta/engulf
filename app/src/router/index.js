@@ -6,8 +6,8 @@ import DetailsView from "../views/DetailsView.vue";
 import ShowView from "../views/ShowView.vue";
 
 const routes = [
-  { path: "/", name: "home", component: HomeView },
-  { path: "/show", name: "show", component: ShowView },
+  { path: "/", name: "home", component: ShowView },
+  { path: "/show", name: "show", component: HomeView },
   { path: "/posts/:id", name: "details", component: DetailsView,  props: true },
 ];
 
