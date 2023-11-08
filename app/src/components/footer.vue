@@ -12,7 +12,7 @@
             Want to Join Us
           </strong>
           <a
-            href="https://goesselambach.vercel.app/"
+            href=""
             target="_blank"
             class="inline-flex items-center gap-2 rounded-full border border-white bg-white px-8 py-3 text-cyan-600 hover:bg-transparent hover:text-white focus:outline-none focus:ring active:bg-white/90"
           >

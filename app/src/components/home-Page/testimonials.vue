@@ -43,7 +43,7 @@
       v-if="isBlogOpen"
       class="fixed z-50 top-20 lg:top-28 inset-0 flex items-center justify-center bg-white bg-opacity-60"
     >
-      <div class="bg-white p-4 rounded-md w-5/6 h-full ">
+      <div class="bg-white p-4 rounded-md w-5/6 h-full">
         <button @click="closeBlogModal" class="text-red-500">go back</button>
         <h3 class="text-xl font-semibold mb-2">{{ blogTitle }}</h3>
         <p v-if="blogDetails">{{ blogDetails }}</p>
@@ -97,21 +97,23 @@ const blogs = ref([
   {
     imageUrl: "/src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
-    title: "Capital Size: 500 to 1000 USD",
+    title: "The first blog",
     summary:
-      "The implementation of blockchain technology lorem ipsum and the implementation of the blockchain technology lorem ipsum of the blockchain technology lorem ipsum of the blockchain technology lorem , and the implementation of the blockchain technology lorem matrixm ipsum and the implementation of the blockchain technology lore",
+      "At first Forex, our guiding vision is to become a globally recognized leader in the foreign exchange industry. We aim to empower individuals and businesses with the knowledge and tools they need to navigate the complex world of currency trading successfully. We believe that by delivering exceptional services, staying at the forefront of technological advancements, and fostering a culture of continuous learning, we can achieve our vision of becoming the go-to destination for forex trading",
   },
   {
     imageUrl: "/src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
-    title: "Capital Size: 500 to 1000 USD",
-    summary: "Weekly 30% to 70% return",
+    title: "The second blog",
+    summary:
+      "At second Forex, our guiding vision is to become a globally recognized leader in the foreign exchange industry. We aim to empower individuals and businesses with the knowledge and tools they need to navigate the complex world of currency trading successfully. We believe that by delivering exceptional services, staying at the forefront of technological advancements, and fostering a culture of continuous learning, we can achieve our vision of becoming the go-to destination for forex trading",
   },
   {
     imageUrl: "/src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
-    title: "Capital Size: 500 to 1000 USD",
-    summary: "Weekly 40% to 100% return",
+    title: "The third blog",
+    summary:
+      "At third Forex, our guiding vision is to become a globally recognized leader in the foreign exchange industry. We aim to empower individuals and businesses with the knowledge and tools they need to navigate the complex world of currency trading successfully. We believe that by delivering exceptional services, staying at the forefront of technological advancements, and fostering a culture of continuous learning, we can achieve our vision of becoming the go-to destination for forex trading",
   },
 ]);
 
