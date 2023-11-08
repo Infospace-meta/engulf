@@ -11,7 +11,7 @@
             class="shadow-2xl rounded-b-xl w-80"
           >
             <div class="rounded-t-xl">
-              <img :src="blog.imageUrl" :alt="blog.altText" class="w-auto" />
+              <img :src="`${blog.imageUrl}`" :alt="blog.altText" class="w-auto" />
             </div>
             <div class="flex items-center justify-center p-5 bg-slate-50">
               <p class="text-lg text-slate-600">
@@ -95,21 +95,21 @@ import { ref } from "vue";
 
 const blogs = ref([
   {
-    imageUrl: "./src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
     title: "The first blog",
     summary:
       "At first Forex, our guiding vision is to become a globally recognized leader in the foreign exchange industry. We aim to empower individuals and businesses with the knowledge and tools they need to navigate the complex world of currency trading successfully. We believe that by delivering exceptional services, staying at the forefront of technological advancements, and fostering a culture of continuous learning, we can achieve our vision of becoming the go-to destination for forex trading",
   },
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
     title: "The second blog",
     summary:
       "At second Forex, our guiding vision is to become a globally recognized leader in the foreign exchange industry. We aim to empower individuals and businesses with the knowledge and tools they need to navigate the complex world of currency trading successfully. We believe that by delivering exceptional services, staying at the forefront of technological advancements, and fostering a culture of continuous learning, we can achieve our vision of becoming the go-to destination for forex trading",
   },
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
     title: "The third blog",
     summary:
