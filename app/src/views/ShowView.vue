@@ -2,9 +2,9 @@
   <div id="hero" class="scroll-target">
     <Hero />
   </div>
-  <div id="strategy" class="scroll-target">
+  <!-- <div id="strategy" class="scroll-target">
     <Strategies />
-  </div>
+  </div> -->
   <div id="strategies" class="scroll-target">
     <StrategiesModal />
   </div>

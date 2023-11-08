@@ -5,7 +5,7 @@
     >
       Tracksheet & Strategies
     </h1>
-    <div class="grid lg:grid-cols-4 gap-5 sm:grid-cols-1">
+    <div class="grid lg:grid-cols-4 gap-5 sm:grid-cols-1 md:max-lg:grid-cols-2">
       <div
         @click="selectCategory(catIndex)"
         v-for="(cat, catIndex) in category"
