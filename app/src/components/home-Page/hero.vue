@@ -26,7 +26,7 @@
     </div>
     <div>
       <img
-        src="src/assets/images/heroImage.jpg"
+        src="../../assets/images/heroImage.jpg"
         alt="heroImage"
         class="h-76 lg:h-96"
       />
