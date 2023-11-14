@@ -53,7 +53,9 @@
   </div>
 
   <!-- large screen  -->
-  <div class="px-5 lg:px-96 max-lg:hidden h-screen">
+  <div
+    class="flex flex-col justify-center lg:px-24 xl:px-56 3xl:px-80 max-lg:hidden h-screen"
+  >
     <h1
       class="text-5xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
     >
