@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-3xl mx-auto">
+  <div class="lg:max-w-screen-3xl mx-auto">
     <div class="blogs">
       <div class="flex flex-row justify-center items-center">
         <div
@@ -51,8 +51,8 @@
     </div>
 
     <!-- testimonial-content -->
-    <div class="testimonials my-auto py-5 mx-auto justify-center flex">
-      <div class="flex flex-col max-w-6xl">
+    <div class="testimonials my-auto py-5 mx-auto justify-center flex-col">
+      <div class="flex flex-col">
         <div class="text-2xl text-red-500 font-semibold m-4 text-center">
           TESTIMONIALS
         </div>

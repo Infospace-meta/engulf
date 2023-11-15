@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex flex-col mx-auto px-4 items-center justify-center">
     <div class="flex flex-col justify-center gap-5 max-w-7xl">
       <h1 class="justify-center flex font-semibold text-xl">
         Why Choose Pro Forex Investments

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col mx-auto max-w-6xl lg:flex-row">
-    <div class="w-1/2 lg:p-40 items-center justify-center">
+    <div class="mx-auto flex flex-col justify-center">
       <h1 class="text-3xl">Let’s connect!</h1>
       <p class="text-lg">
         On Pinterest, inspiration comes in the form of great content from
