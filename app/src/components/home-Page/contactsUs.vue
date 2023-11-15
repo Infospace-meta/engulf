@@ -8,7 +8,7 @@
         hear from you!
       </p>
     </div>
-    <div class="w-1/2 p-40">
+    <div class="p-40">
       <div
         class="flex lg:flex-row flex-col gap-5 items-center justify-center py-2"
       >
@@ -49,10 +49,10 @@
           />
         </div>
       </div>
-      <div class="flex flex-col pt-2 lg:px-16">
+      <div class="flex flex-col pt-2 items-center">
         <textarea
           placeholder="Comments"
-          class="w-auto h-auto border border-gray-400 p-4 rounded-md"
+          class="border border-gray-400 p-4 rounded-md max-lg:w-48 w-[420px]"
           style="resize: vertical; min-height: 50px; max-height: 100px"
           v-model="shopDescription"
           @input="checkWordCount"

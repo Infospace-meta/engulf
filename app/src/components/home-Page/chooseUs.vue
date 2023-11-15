@@ -9,7 +9,7 @@
         paramount. That's why we stand out as your trusted partner for
         investment growth through cryptocurrency
       </p>
-      <div class="grid grid-col-1 lg:grid-cols-3 gap-4">
+      <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div
           v-for="reason in reasons"
           :key="reason.id"
