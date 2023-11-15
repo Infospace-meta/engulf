@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 lg:px-96 lg:hidden">
+  <div class="px-5 lg:hidden max-w-screen-3xl mx-auto justify-center flex">
     <h1
       class="text-2xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
     >
@@ -53,8 +53,9 @@
   </div>
 
   <!-- large screen  -->
+  <!-- lg:px-24 xl:px-56 3xl:px-80 -->
   <div
-    class="flex flex-col justify-center lg:px-24 xl:px-56 3xl:px-80 max-lg:hidden h-screen"
+    class="flex flex-col justify-center max-w-screen-2xl max-lg:hidden mx-auto"
   >
     <h1
       class="text-5xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"

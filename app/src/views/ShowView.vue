@@ -1,32 +1,32 @@
 <template>
-  <div id="hero" class="scroll-target">
+  <div id="hero" class="scroll-target py-10">
     <Hero />
   </div>
   <!-- <div id="strategy" class="scroll-target">
     <Strategies />
   </div> -->
-  <div id="strategies" class="scroll-target">
+  <div id="strategies" class="scroll-target py-10">
     <StrategiesModal />
   </div>
   <!-- <div id="strategies" class="scroll-target">
     <StrategyAccordion />
   </div> -->
-  <div id="about" class="scroll-target">
+  <div id="about" class="scroll-target py-10">
     <About />
   </div>
-  <div id="subscription" class="scroll-target">
+  <div id="subscription" class="scroll-target py-10">
     <Subscription />
   </div>
-  <div id="subscription" class="scroll-target">
+  <div id="subscription" class="scroll-target py-10">
     <Testimonials />
   </div>
-  <div id="chooseus" class="scroll-target">
+  <div id="chooseus" class="scroll-target py-10">
     <ChooseUs />
   </div>
-  <div id="faqs" class="scroll-target">
+  <div id="faqs" class="scroll-target py-10">
     <Faqs />
   </div>
-  <div id="contact" class="scroll-target">
+  <div id="contact" class="scroll-target py-10">
     <ContactUs />
   </div>
 
