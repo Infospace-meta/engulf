@@ -8,9 +8,9 @@
   <div id="strategies" class="scroll-target my-20">
     <StrategiesModal />
   </div>
-  <!-- <div id="strategies" class="scroll-target">
+  <div id="strategies" class="scroll-target">
     <StrategyAccordion />
-  </div> -->
+  </div>
   <div id="about" class="scroll-target my-20">
     <About />
   </div>
@@ -39,8 +39,8 @@ import ChooseUs from "../components/home-Page/chooseUs.vue";
 import ContactUs from "../components/home-Page/contactsUs.vue";
 import Faqs from "../components/home-Page/faqs.vue";
 import Hero from "../components/home-Page/hero.vue";
-import Strategies from "../components/home-Page/strategies/strategies.vue";
+//import Strategies from "../components/home-Page/strategies/strategies.vue";
 import StrategiesModal from "../components/home-Page/strategies/strategiesModal.vue";
-//import StrategyAccordion from "../components/home-Page/strategies/strategiesAccordian.vue";
+import StrategyAccordion from "../components/home-Page/strategies/strategiesAccordian.vue";
 import Testimonials from "../components/home-Page/testimonials.vue";
 </script>
