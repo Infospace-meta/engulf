@@ -11,19 +11,21 @@
     >
       <div
         :class="[
-          `bg-${color}-50`,
+          `bg-white`,
           'h-2/6',
           'w-4/6',
           'z-0',
           'rounded-t-xl',
           'shadow-xl',
-          `border-t border-l border-r border-${color}-200`,
+          `border-t border-l border-r border-${color.code}-200`,
           { 'translate-y-20': isTranslated[index] },
         ]"
-      ></div>
+      >
+        <p class="flex justify-center translate-y-10">{{ color.name }}</p>
+      </div>
       <div
         :class="[
-          `bg-${color}-500`,
+          color.background,
           'h-4/6',
           'w-5/6',
           'z-20',
@@ -31,7 +33,7 @@
           'border-l-[100px]',
           'border-l-transparent',
           'border-t-[20px]',
-          `border-t-${color}-50`,
+          `border-t-white`,
           'border-r-[100px]',
           'border-r-transparent',
         ]"
@@ -43,8 +45,23 @@
 <script setup>
 import { ref } from "vue";
 
-const colors = ["red", "green", "yellow", "purple", "orange", "green"];
-const isTranslated = ref(colors.map(() => true));
+// Initialize colors as an array
+const colors = ref([
+  { code: "green", background: "bg-green-500", name: "Green" },
+  { code: "red", background: "bg-red-500", name: "Red" },
+  { code: "purple", background: "bg-pink-500", name: "Blue" },
+  { code: "orange", background: "bg-orange-500", name: "Yellow" },
+  {
+    code: "red",
+    background: "bg-pink-600",
+    name: "Purple",
+  },
+  { code: "green", background: "bg-blue-500", name: "Orange" },
+  { code: "red", background: "bg-cyan-700", name: "Red" },
+  { code: "purple", background: "bg-black", name: "Blue" },
+]);
+
+const isTranslated = ref(colors.value.map(() => true)); // Use colors.value to access the array
 
 const removeTranslate = (index) => {
   isTranslated.value[index] = false;
