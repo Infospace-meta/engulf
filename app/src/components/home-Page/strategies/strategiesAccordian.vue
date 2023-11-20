@@ -146,19 +146,3 @@ const addTranslate = (index) => {
   );
 }
 </style> -->
-<style>
-.bg-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 192, 192, 1) 10%,
-    /* Lighter red */ rgba(255, 0, 0, 1) 20%,
-    /* Medium red */ rgba(200, 0, 0, 1) 30%,
-    /* Slightly darker red */ rgba(150, 0, 0, 1) 50%,
-    /* Darker red */ rgba(200, 0, 0, 1) 75%,
-    /* Slightly darker red again */ rgba(255, 0, 0, 1) 85%,
-    /* Medium red again */ rgba(255, 192, 192, 1) 90%,
-    /* Lighter red again */ rgba(255, 255, 255, 1) 100%
-  );
-}
-</style>
