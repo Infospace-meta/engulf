@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-wrap justify-center gap-10 lg:px-96 lg:max-w-screen-7xl mx-auto py-10 bg-gradient-to-bl from-green-400 from-2% via-green-100 via-30% to-white to-90% pattern-houndstooth-green-50/100"
+    class="flex flex-wrap justify-center gap-10 lg:px-96 lg:max-w-screen-7xl mx-auto py-10 bg-gradient pattern-texture-green-200/100"
   >
     <div
       v-for="(color, index) in colors"
@@ -22,13 +22,20 @@
         ]"
       >
         <p
-          class="flex justify-center translate-y-10 font-semibold text-xl p-4 text-center"
+          class="flex justify-center translate-y-6 font-semibold text-xl p-4 text-center"
           :style="{ color: color.background }"
         >
           {{ color.name }}
         </p>
       </div>
       <div
+        class="z-40 translate-y-14 absolute flex flex-col items-center justify-center"
+      >
+        <img :src="color.img" />
+        <p class="text-white font-semibold text-2xl py-4">{{ color.count }}</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center"
         :class="[
           color.background,
           'h-4/6',
@@ -43,6 +50,7 @@
           'border-r-transparent',
         ]"
       ></div>
+      <div id="margin-calculator-757851"></div>
     </div>
   </div>
 </template>
@@ -56,43 +64,59 @@ const colors = ref([
     code: "blue",
     background: "bg-sky-500",
     name: "telegram members",
+    count: "500",
+    img: "src/assets/images/telegram.png",
   },
   {
     code: "green",
-    background: "bg-green-600",
+    background: "bg-[#25D366]",
     name: "whatsapp followers",
+    count: "500",
+    img: "src/assets/images/whatsapp.png",
   },
   {
     code: "gray",
     background: "bg-black",
     name: "x.com followers",
+    count: "500",
+    img: "src/assets/images/twitterx.png",
   },
   {
     code: "blue",
     background: "bg-blue-500",
     name: "facebook followers",
+    count: "500",
+    img: "src/assets/images/facebook.png",
   },
   {
     code: "red",
     background: "bg-red-500",
     name: "youtube subscribers",
+    count: "500",
+    img: "src/assets/images/youtube.png",
   },
 
   {
     code: "purple",
-    background: "bg-violet-500",
+    background: "bg-[#833AB4]",
     name: "instagram followers",
+    count: "500",
+    img: "src/assets/images/instagram.png",
   },
   {
     code: "cyan",
     background: "bg-cyan-600",
     name: "Paid clients",
+    count: "500",
+    img: "src/assets/images/clients.png",
   },
 
   {
     code: "orange",
     background: "bg-orange-500",
     name: "total followers",
+    count: "500",
+    img: "src/assets/images/followers.png",
   },
 ]);
 
@@ -105,4 +129,59 @@ const removeTranslate = (index) => {
 const addTranslate = (index) => {
   isTranslated.value[index] = true;
 };
+
+RemoteCalc({
+  Url: "https://www.cashbackforex.com",
+  TopPaneStyle:
+    "YmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCNmZmYgMjAlLCAjZjVmNWY1IDQ1JSk7IGNvbG9yOiBibGFjazsgYm9yZGVyOiBzb2xpZCAxcHggI2FhYTsgYm9yZGVyLWJvdHRvbTogbm9uZTsg",
+  BottomPaneStyle:
+    "YmFja2dyb3VuZDogI2YzZjNmMzsgYm9yZGVyOiBzb2xpZCAxcHggI2FhYTsgY29sb3I6IGJsYWNrOw==",
+  ButtonStyle:
+    "YmFja2dyb3VuZDogIzM0MzU0MDsgY29sb3I6IHdoaXRlOyBib3JkZXItcmFkaXVzOiAyMHB4Ow==",
+  TitleStyle:
+    "dGV4dC1hbGlnbjogbGVmdDsgZm9udC1zaXplOiA0MHB4OyBmb250LXdlaWdodDogNTAwOw==",
+  TextboxStyle:
+    "YmFja2dyb3VuZC1jb2xvcjogd2hpdGU7IGNvbG9yOiBibGFjazsgYm9yZGVyOiBzb2xpZCAxcHggI2FhYWFhYQ==",
+  ContainerWidth: "665",
+  HighlightColor: "#ffff00",
+  IsDisplayTitle: false,
+  IsShowChartLinks: true,
+  IsShowEmbedButton: true,
+  CompactType: "large",
+  Calculator: "margin-calculator",
+  ContainerId: "margin-calculator-757851",
+});
 </script>
+
+<!-- <style>
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 255, 255, 0.8) 10%,
+    rgba(0, 255, 255, 1) 20%,
+    rgba(0, 200, 255, 1) 30%,
+    rgba(0, 150, 255, 1) 50%,
+    rgba(0, 200, 255, 1) 75%,
+    rgba(0, 255, 255, 1) 85%,
+    rgba(0, 255, 255, 0.8) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+</style> -->
+<style>
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 192, 192, 1) 10%,
+    /* Lighter red */ rgba(255, 0, 0, 1) 20%,
+    /* Medium red */ rgba(200, 0, 0, 1) 30%,
+    /* Slightly darker red */ rgba(150, 0, 0, 1) 50%,
+    /* Darker red */ rgba(200, 0, 0, 1) 75%,
+    /* Slightly darker red again */ rgba(255, 0, 0, 1) 85%,
+    /* Medium red again */ rgba(255, 192, 192, 1) 90%,
+    /* Lighter red again */ rgba(255, 255, 255, 1) 100%
+  );
+}
+</style>

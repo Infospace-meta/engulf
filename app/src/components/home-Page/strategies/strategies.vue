@@ -1,77 +1,142 @@
-<template>
-  <div
-    class="flex flex-wrap justify-center gap-10 lg:px-96 lg:max-w-screen-7xl mx-auto py-10 bg-gradient-to-bl from-green-400 from-2% via-green-100 via-30% to-white to-90% pattern-houndstooth-green-50/100"
-  >
-    <div class="w-64 h-80 flex flex-col items-center justify-center">
-      <div
-        class="bg-red-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-red-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-red-900 h-4/6 w-5/6 z-10 rounded-xl shadow-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-red-50 border-r-[100px] border-r-transparent"
-      ></div>
-    </div>
-    <div class="w-64 h-80 flex flex-col items-center justify-center">
-      <div
-        class="bg-green-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-green-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-green-800 h-4/6 w-5/6 z-10 rounded-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-green-50 border-r-[100px] border-r-transparent"
-      ></div>
-    </div>
-    <div class="w-64 h-80 flex flex-col items-center justify-center">
-      <div
-        class="bg-blue-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-blue-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-blue-900 h-4/6 w-5/6 z-10 rounded-xl shadow-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-blue-50 border-r-[100px] border-r-transparent"
-      ></div>
-    </div>
-    <div class="w-64 h-80 flex flex-col items-center justify-center">
-      <div
-        class="bg-yellow-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-yellow-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-yellow-500 h-4/6 w-5/6 z-10 rounded-xl shadow-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-yellow-50 border-r-[100px] border-r-transparent"
-      ></div>
-    </div>
-    <div class="w-64 h-80 flex flex-col items-center justify-center">
-      <div
-        class="bg-purple-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-purple-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-purple-800 h-4/6 w-5/6 z-10 rounded-xl shadow-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-purple-50 border-r-[100px] border-r-transparent"
-      ></div>
-    </div>
-    <div
-      class="w-64 h-80 flex flex-col items-center justify-center"
-      @mouseover="removeTranslate"
-      @mouseout="addTranslate"
-    >
-      <div
-        class="bg-orange-50 h-2/6 w-4/6 z-0 rounded-t-xl shadow-xl border-t border-l border-r border-orange-200"
-        :class="{ 'translate-y-20': isTranslated }"
-      ></div>
-      <div
-        class="bg-orange-700 h-4/6 w-5/6 z-10 rounded-xl shadow-xl border-l-[100px] border-l-transparent border-t-[20px] border-t-orange-50 border-r-[100px] border-r-transparent"
-      ></div>
+<!-- <template>
+  <div class="flex justify-center items-center">
+    <div class="tradingview-widget-container  max-w-7xl" style="height: 500px; width: 100%">
+      <div :id="widgetId" style="height: calc(100% - 32px); width: 100%"></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+        >
+          <span class="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+import { ref, onMounted } from "vue";
+
+let tvScriptLoadingPromise;
+
+export default {
+  setup() {
+    const widgetId = ref("tradingview_23647");
+
+    const createWidget = () => {
+      if (document.getElementById(widgetId.value) && "TradingView" in window) {
+        new window.TradingView.widget({
+          autosize: true,
+          symbol: "NASDAQ:AAPL",
+          interval: "D",
+          timezone: "Etc/UTC",
+          theme: "light",
+          style: "1",
+          locale: "en",
+          enable_publishing: false,
+          allow_symbol_change: true,
+          container_id: widgetId.value,
+        });
+      }
+    };
+
+    const onLoadScript = () => {
+      createWidget();
+    };
+
+    onMounted(() => {
+      if (!tvScriptLoadingPromise) {
+        tvScriptLoadingPromise = new Promise((resolve) => {
+          const script = document.createElement("script");
+          script.id = "tradingview-widget-loading-script";
+          script.src = "https://s3.tradingview.com/tv.js";
+          script.type = "text/javascript";
+          script.onload = resolve;
+
+          document.head.appendChild(script);
+        });
+      }
+
+      tvScriptLoadingPromise.then(onLoadScript);
+    });
+
+    return {
+      widgetId,
+    };
+  },
+};
+</script> -->
+<template>
+  <div
+    class="tradingview-widget-container max-w-7xl"
+    style="height: 100px; width: 100%"
+  >
+    <div :id="widgetId" class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a
+        href="https://www.tradingview.com/"
+        rel="noopener nofollow"
+        target="_blank"
+      >
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
+    </div>
+  </div>
+</template>
+
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
-const isTranslated = ref(true);
+const widgetId = ref("tradingview-ticker-tape");
+const widgetScriptSrc = ref(
+  "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+);
 
-const removeTranslate = () => {
-  isTranslated.value = false;
+const createWidget = () => {
+  if (window.TradingView) {
+    new window.TradingView.widget({
+      symbols: [
+        { proName: "FOREXCOM:SPXUSD", title: "S&P 500" },
+        { proName: "FOREXCOM:NSXUSD", title: "US 100" },
+        { proName: "FX_IDC:EURUSD", title: "EUR to USD" },
+        { proName: "BITSTAMP:BTCUSD", title: "Bitcoin" },
+        { proName: "BITSTAMP:ETHUSD", title: "Ethereum" },
+        { description: "Gold commodity", proName: "OANDA:XAUUSD" },
+      ],
+      showSymbolLogo: true,
+      colorTheme: "light",
+      isTransparent: true,
+      displayMode: "adaptive",
+      locale: "en",
+      container_id: widgetId.value,
+    });
+  } else {
+    console.error("TradingView object is not available.");
+  }
 };
 
-const addTranslate = () => {
-  isTranslated.value = true;
+const onLoadScript = () => {
+  createWidget();
+};
+
+onMounted(() => {
+  loadTradingViewScript().then(onLoadScript);
+});
+
+const loadTradingViewScript = () => {
+  if (!window.TradingView) {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.id = "tradingview-widget-ticker-tape-script";
+      script.src = widgetScriptSrc.value;
+      script.type = "text/javascript";
+      script.onload = resolve;
+
+      document.head.appendChild(script);
+    });
+  } else {
+    return Promise.resolve();
+  }
 };
 </script>
