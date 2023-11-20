@@ -130,7 +130,7 @@ const addTranslate = (index) => {
 };
 </script>
 
-<!-- <style>
+<style>
 .bg-gradient {
   background: linear-gradient(
     180deg,
@@ -145,4 +145,4 @@ const addTranslate = (index) => {
     rgba(255, 255, 255, 1) 100%
   );
 }
-</style> -->
+</style>
