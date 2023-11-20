@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col mx-auto px-4 items-center justify-center">
+  <div class="flex flex-col mx-auto px-4 items-center justify-center py-10 ">
     <div class="flex flex-col justify-center gap-5 max-w-7xl">
       <h1 class="justify-center flex font-semibold text-xl">
         Why Choose Pro Forex Investments
@@ -14,7 +14,7 @@
           v-for="reason in reasons"
           :key="reason.id"
           :reason="reason"
-          class="border border-green-600 p-6 rounded-lg"
+          class="border border-green-600 p-6 rounded-lg bg-white"
         >
           <h1 class="font-semibold">{{ reason.title }}</h1>
           <p class="text-slate-500">{{ reason.paragraph }}</p>

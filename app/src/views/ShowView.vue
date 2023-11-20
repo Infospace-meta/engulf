@@ -8,9 +8,7 @@
   <div id="strategies" class="scroll-target my-20">
     <StrategiesModal />
   </div>
-  <div id="strategies" class="scroll-target">
-    <StrategyAccordion />
-  </div>
+
   <div id="about" class="scroll-target my-20">
     <About />
   </div>
@@ -20,8 +18,11 @@
   <div id="subscription" class="scroll-target my-20">
     <Testimonials />
   </div>
-  <div id="chooseus" class="scroll-target my-20">
+  <div id="chooseus" class="scroll-target">
     <ChooseUs />
+  </div>
+  <div id="strategies" class="scroll-target">
+    <StrategyAccordion />
   </div>
   <div id="faqs" class="scroll-target my-20">
     <Faqs />

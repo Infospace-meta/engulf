@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 lg:hidden max-w-screen-3xl mx-auto justify-center flex flex-col">
+  <div class="px-5 lg:hidden max-w-screen-3xl mx-auto justify-center flex flex-col ">
     <h1
       class="text-2xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
     >
