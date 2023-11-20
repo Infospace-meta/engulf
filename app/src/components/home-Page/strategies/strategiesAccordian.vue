@@ -5,7 +5,7 @@
     <div
       v-for="(color, index) in colors"
       :key="index"
-      class="w-64 h-80 flex flex-col items-center justify-center"
+      class="w-56 h-80 flex flex-col items-center justify-center"
       @mouseover="removeTranslate(index)"
       @mouseout="addTranslate(index)"
     >
@@ -21,13 +21,18 @@
           { 'translate-y-20': isTranslated[index] },
         ]"
       >
-        <p class="flex justify-center translate-y-10">{{ color.name }}</p>
+        <p
+          class="flex justify-center translate-y-10 font-semibold text-xl p-4 text-center"
+          :style="{ color: color.background }"
+        >
+          {{ color.name }}
+        </p>
       </div>
       <div
         :class="[
           color.background,
           'h-4/6',
-          'w-5/6',
+          'w-4/6',
           'z-20',
           'rounded-xl',
           'border-l-[100px]',
@@ -47,18 +52,48 @@ import { ref } from "vue";
 
 // Initialize colors as an array
 const colors = ref([
-  { code: "green", background: "bg-green-500", name: "Green" },
-  { code: "red", background: "bg-red-500", name: "Red" },
-  { code: "purple", background: "bg-pink-500", name: "Blue" },
-  { code: "orange", background: "bg-orange-500", name: "Yellow" },
+  {
+    code: "blue",
+    background: "bg-sky-500",
+    name: "telegram members",
+  },
+  {
+    code: "green",
+    background: "bg-green-600",
+    name: "whatsapp followers",
+  },
+  {
+    code: "gray",
+    background: "bg-black",
+    name: "x.com followers",
+  },
+  {
+    code: "blue",
+    background: "bg-blue-500",
+    name: "facebook followers",
+  },
   {
     code: "red",
-    background: "bg-pink-600",
-    name: "Purple",
+    background: "bg-red-500",
+    name: "youtube subscribers",
   },
-  { code: "green", background: "bg-blue-500", name: "Orange" },
-  { code: "red", background: "bg-cyan-700", name: "Red" },
-  { code: "purple", background: "bg-black", name: "Blue" },
+
+  {
+    code: "purple",
+    background: "bg-violet-500",
+    name: "instagram followers",
+  },
+  {
+    code: "cyan",
+    background: "bg-cyan-600",
+    name: "Paid clients",
+  },
+
+  {
+    code: "orange",
+    background: "bg-orange-500",
+    name: "total followers",
+  },
 ]);
 
 const isTranslated = ref(colors.value.map(() => true)); // Use colors.value to access the array
