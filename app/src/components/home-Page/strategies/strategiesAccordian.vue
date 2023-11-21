@@ -19,6 +19,7 @@
           'shadow-xl',
           `border-t border-l border-r border-${color.code}-200`,
           { 'translate-y-20': isTranslated[index] },
+          'transition-transform duration-700',
         ]"
       >
         <p
@@ -144,5 +145,8 @@ const addTranslate = (index) => {
     rgba(0, 255, 255, 0.8) 90%,
     rgba(255, 255, 255, 1) 100%
   );
+}
+.transition-transform {
+  transition-property: transform;
 }
 </style>
