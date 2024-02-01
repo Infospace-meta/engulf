@@ -9,7 +9,7 @@
           >
         </h1>
         <img
-          src="src/assets/images/info.png"
+          src="../../assets/images/info.png"
           alt=""
           class="w-20 hover:animate-pulse"
         />
@@ -51,7 +51,7 @@
           >
         </h1>
         <img
-          src="src/assets/images/about.png"
+          src="../../assets/images/about.png"
           alt=""
           class="w-20 hover:animate-ping"
         />
@@ -65,7 +65,7 @@
           >
         </h1>
         <img
-          src="src/assets/images/mission.png"
+          src="../../assets/images/mission.png"
           alt=""
           class="w-20 hover:animate-bounce"
         />

@@ -42,7 +42,6 @@
 
 <script setup>
 import { ref } from "vue";
-
 const testimonials = ref([
   {
     imageUrl: "/src/assets/images/image2.jpg",

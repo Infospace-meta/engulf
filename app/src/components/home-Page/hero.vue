@@ -32,6 +32,7 @@
     <div class="flex justify-center items-center">
       <!-- <img
         src="src/assets/images/heroImage.jpg"
+
         alt="heroImage"
         class="h-76 lg:h-96"
       /> -->
