@@ -1,5 +1,7 @@
 <template>
-  <div class="px-5 lg:px-96 lg:hidden">
+  <div
+    class="px-5 lg:hidden max-w-screen-3xl mx-auto justify-center flex flex-col"
+  >
     <h1
       class="text-2xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
     >
@@ -53,7 +55,10 @@
   </div>
 
   <!-- large screen  -->
-  <div class="px-5 lg:px-96 max-lg:hidden h-screen">
+  <!-- lg:px-24 xl:px-56 3xl:px-80 -->
+  <div
+    class="flex flex-col justify-center max-w-screen-2xl max-lg:hidden mx-auto"
+  >
     <h1
       class="text-5xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
     >
@@ -116,13 +121,34 @@
     </div>
   </div>
   <!-- the track mode  -->
-  <div
+  <!-- <div
     v-if="isModalOpen"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
   >
     <div class="bg-white p-4 rounded-md w-1/2">
       <h3 class="text-xl font-semibold mb-2">{{ modalTitle }}</h3>
       <p v-if="modalDetails">{{ modalDetails }}</p>
+      <button @click="closeModal" class="text-red-500">close</button>
+    </div>
+  </div> -->
+  <div
+    v-if="isModalOpen"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
+  >
+    <div class="bg-white p-4 rounded-md w-1/2">
+      <h3 class="text-xl font-semibold mb-2">{{ modalTitle }}</h3>
+      <div v-for="(detail, index) in modalDetails.details" :key="index">
+        <component
+          :is="detail.type === 'heading' ? 'h1' : 'p'"
+          v-if="detail.text"
+          :class="{
+            'text-indigo-700 font-semibold text-lg py-2':
+              detail.type === 'heading',
+          }"
+        >
+          {{ detail.text }}
+        </component>
+      </div>
       <button @click="closeModal" class="text-red-500">close</button>
     </div>
   </div>
@@ -151,24 +177,37 @@ const category = ref([
 ]);
 
 const tracks = ref([
-  { name: "Trend-trading", details: "some details", category: 0 },
-  { name: "6 pair hedge", details: "some details", category: 0 },
-  { name: "level trading", details: "some details", category: 0 },
-  { name: "martingle & griding", details: "some details", category: 0 },
-  { name: "miscellaneous/swing", details: "some details", category: 0 },
-  { name: "paid client screenshot", details: "some details", category: 1 },
-  { name: "investor accounts", details: "some details", category: 1 },
-  { name: "hesdge signals - excel", details: "some details", category: 1 },
-  { name: "hedge signals - web", details: "some details", category: 1 },
-  { name: "xauud - performance ", details: "some details", category: 1 },
-  { name: "Shop 3", details: "some details", category: 2 },
-  { name: "Shop 4", details: "some details", category: 2 },
-  { name: "Shop 5", details: "some details", category: 2 },
-  { name: "Shop 6", details: "some details", category: 2 },
-  { name: "Shop 3", details: "some details", category: 2 },
-  { name: "tab format", details: "some details", category: 1 },
-  { name: "web format", details: "some details", category: 3 },
-  { name: "Copy trade performance", details: "some details", category: 3 },
+  {
+    category: 0,
+    name: "Trend-trading",
+    details: [
+      {
+        type: "heading",
+        text: "BACKGROUND",
+      },
+      {
+        type: "paragraph",
+        text: "Dentistry is the evaluation, diagnosis, prevention and/or treatment (nonsurgical, surgical or related procedures) of diseases, disorders and/or conditions of the oral cavity, maxillofacial area and/or the adjacent and associated structures and their impact on the human body. The diseases or conditions may be of hard and soft tissues and include tooth decay, infections, malformations, malocclusion, tumours and traumatic injuries. These conditions cause pain, discomfort, and morphological defects and impede normal function in the head and neck region. They may be debilitating and affect the social well-being of individuals thus impacting negatively on the quality of life.",
+      },
+    ],
+  },
+  // { name: "6 pair hedge", details: "some details", category: 0 },
+  // { name: "level trading", details: "some details", category: 0 },
+  // { name: "martingle & griding", details: "some details", category: 0 },
+  // { name: "miscellaneous/swing", details: "some details", category: 0 },
+  // { name: "paid client screenshot", details: "some details", category: 1 },
+  // { name: "investor accounts", details: "some details", category: 1 },
+  // { name: "hesdge signals - excel", details: "some details", category: 1 },
+  // { name: "hedge signals - web", details: "some details", category: 1 },
+  // { name: "xauud - performance ", details: "some details", category: 1 },
+  // { name: "Shop 3", details: "some details", category: 2 },
+  // { name: "Shop 4", details: "some details", category: 2 },
+  // { name: "Shop 5", details: "some details", category: 2 },
+  // { name: "Shop 6", details: "some details", category: 2 },
+  // { name: "Shop 3", details: "some details", category: 2 },
+  // { name: "tab format", details: "some details", category: 1 },
+  // { name: "web format", details: "some details", category: 3 },
+  // { name: "Copy trade performance", details: "some details", category: 3 },
 ]);
 
 const currentCategoryIndex = ref(0);
@@ -186,7 +225,7 @@ const openReadMoreModal = (track) => {
   selectedTrack.value = track;
   isModalOpen.value = true;
   modalTitle.value = track.name;
-  modalDetails.value = track.details;
+  modalDetails.value = track;
   // Implement modal opening logic here
 };
 

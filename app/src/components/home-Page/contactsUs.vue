@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col lg:flex-row bg-slate-100">
-    <div class="w-1/2 lg:p-40 items-center justify-center mx-20">
+  <div class="flex flex-col mx-auto max-w-6xl lg:flex-row">
+    <div class="mx-auto flex flex-col justify-center">
       <h1 class="text-3xl">Let’s connect!</h1>
       <p class="text-lg">
         On Pinterest, inspiration comes in the form of great content from
@@ -8,7 +8,7 @@
         hear from you!
       </p>
     </div>
-    <div class="w-1/2 p-40">
+    <div class="p-40">
       <div
         class="flex lg:flex-row flex-col gap-5 items-center justify-center py-2"
       >
@@ -49,10 +49,10 @@
           />
         </div>
       </div>
-      <div class="flex flex-col  pt-2 lg:px-16 ">
+      <div class="flex flex-col pt-2 items-center">
         <textarea
           placeholder="Comments"
-          class="w-auto h-auto border border-gray-400 p-4 rounded-md"
+          class="border border-gray-400 p-4 rounded-md max-lg:w-48 w-[420px]"
           style="resize: vertical; min-height: 50px; max-height: 100px"
           v-model="shopDescription"
           @input="checkWordCount"
@@ -60,7 +60,9 @@
         <p class="text-gray-600">{{ wordCount }}/100 words</p>
       </div>
       <div class="flex justify-end">
-        <button class="bg-green-700 text-white py-1 px-3  rounded-md">Submit</button>
+        <button class="bg-green-700 text-white py-1 px-3 rounded-md">
+          Submit
+        </button>
       </div>
     </div>
   </div>

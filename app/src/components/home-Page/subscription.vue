@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-center items-center min-h-screen">
+  <div class="flex flex-row justify-center items-center">
     <div
       class="rounded-xl flex flex-col lg:flex-row gap-10 items-center justify-center"
     >

@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen mb-16">
+  <div class="max-w-screen-xl mx-auto px-5 bg-white mb-16">
     <div class="flex flex-col items-center">
       <p class="text-blue-950 text-3xl mt-3">Your Questions Answered</p>
     </div>

@@ -1,116 +1,152 @@
 <template>
-  <div class="px-5 lg:px-96 max-lg:hidden h-screen">
-    <h1
-      class="text-5xl font-semibold text-slate-500 flex items-center justify-center py-10 my-10 border rounded-lg shadow-2xl"
+  <div
+    class="flex flex-wrap justify-center gap-10 lg:px-96 lg:max-w-screen-7xl mx-auto py-10 bg-gradient pattern-texture-green-200/100"
+  >
+    <div
+      v-for="(color, index) in colors"
+      :key="index"
+      class="w-56 h-80 flex flex-col items-center justify-center"
+      @mouseover="removeTranslate(index)"
+      @mouseout="addTranslate(index)"
     >
-      Tracksheet & Strategies
-    </h1>
-    <div class="grid lg:grid-cols-4 gap-5">
       <div
-        @click="selectCategory(catIndex)"
-        v-for="(cat, catIndex) in category"
-        :key="catIndex"
+        :class="[
+          `bg-white`,
+          'h-2/6',
+          'w-4/6',
+          'z-0',
+          'rounded-t-xl',
+          'shadow-xl',
+          `border-t border-l border-r border-${color.code}-200`,
+          { 'translate-y-20': isTranslated[index] },
+          'transition-transform duration-700',
+        ]"
       >
-        <h1
-          :class="[
-            cat.color,
-            {
-              'border-3': currentCategoryIndex === catIndex,
-              border: currentCategoryIndex !== catIndex,
-            },
-          ]"
-          :style="
-            currentCategoryIndex === catIndex
-              ? 'border-color: white; border-weight:5px;'
-              : ''
-          "
-          class="rounded-3xl shadow-xl border-2 border-gray-400 text-white font-bold text-3xl p-10 flex flex-wrap relative"
+        <p
+          class="flex justify-center translate-y-6 font-semibold text-xl p-4 text-center"
+          :style="{ color: color.background }"
         >
-          {{ cat.name }}
-          <div
-            v-if="currentCategoryIndex === catIndex"
-            class="absolute w-0 h-0 border-solid border-t-4 border-transparent border-white bottom-0 left-1/2 transform -translate-x-1/2"
-          ></div>
-        </h1>
+          {{ color.name }}
+        </p>
       </div>
-    </div>
-    <div class="rounded-lg shadow-2xl border-2 mt-5 p-10 relative">
-      <h1 class="text-2xl text-center py-4">
-        {{ category[currentCategoryIndex].name }}
-      </h1>
-      <div class="grid lg:grid-cols-3 gap-3">
-        <div v-for="(track, trackIndex) in displayedTracks" :key="trackIndex">
-          <div
-            class="flex justify-between border border-cyan-600 rounded-xl p-2 hover:text-purple-600"
-          >
-            <h1 class="text-lg font-bold text-slate-600 hover:text-purple-600">
-              {{ track.name.toUpperCase() }}
-            </h1>
-            <img src="../../../assets/images/next.png" />
-          </div>
-        </div>
-      </div>
-      <!-- Indicator for active category -->
       <div
-        class="absolute top-0 left-0 h-1 bg-yellow-400"
-        :style="{
-          width: 100 / category.length + '%',
-          left: (currentCategoryIndex * 100) / category.length + '%',
-        }"
+        class="z-40 translate-y-14 absolute flex flex-col items-center justify-center"
+      >
+        <img :src="color.img" />
+        <p class="text-white font-semibold text-2xl py-4">{{ color.count }}</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center"
+        :class="[
+          color.background,
+          'h-4/6',
+          'w-4/6',
+          'z-20',
+          'rounded-xl',
+          'border-l-[100px]',
+          'border-l-transparent',
+          'border-t-[20px]',
+          `border-t-white`,
+          'border-r-[100px]',
+          'border-r-transparent',
+        ]"
       ></div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref } from "vue";
 
-const category = ref([
-  { name: "Trading Strategies", color: "bg-gradient-to-r from-cyan-500 to-blue-500" },
-  { name: "Signals services", color: "bg-gradient-to-r from-red-500 to-orange-500" },
-  { name: "Live Streamings", color: "bg-gradient-to-r from-green-500 to-yellow-500" },
-  { name: "Live streamings", color: "bg-gradient-to-r from-purple-500 to-indigo-500" },
+// Initialize colors as an array
+const colors = ref([
+  {
+    code: "blue",
+    background: "bg-sky-500",
+    name: "telegram members",
+    count: "500",
+    img: "src/assets/images/telegram.png",
+  },
+  {
+    code: "green",
+    background: "bg-[#25D366]",
+    name: "whatsapp followers",
+    count: "500",
+    img: "src/assets/images/whatsapp.png",
+  },
+  {
+    code: "gray",
+    background: "bg-black",
+    name: "x.com followers",
+    count: "500",
+    img: "src/assets/images/twitterx.png",
+  },
+  {
+    code: "blue",
+    background: "bg-blue-500",
+    name: "facebook followers",
+    count: "500",
+    img: "src/assets/images/facebook.png",
+  },
+  {
+    code: "red",
+    background: "bg-red-500",
+    name: "youtube subscribers",
+    count: "500",
+    img: "src/assets/images/youtube.png",
+  },
+
+  {
+    code: "purple",
+    background: "bg-[#833AB4]",
+    name: "instagram followers",
+    count: "500",
+    img: "src/assets/images/instagram.png",
+  },
+  {
+    code: "cyan",
+    background: "bg-cyan-600",
+    name: "Paid clients",
+    count: "500",
+    img: "src/assets/images/clients.png",
+  },
+
+  {
+    code: "orange",
+    background: "bg-orange-500",
+    name: "total followers",
+    count: "500",
+    img: "src/assets/images/followers.png",
+  },
 ]);
 
-const tracks = ref([
-  { name: "Trend-trading", category: 0 },
-  { name: "6 pair hedge", category: 0 },
-  { name: "level trading", category: 0 },
-  { name: "martingle & griding", category: 0 },
-  { name: "miscellaneous/swing", category: 0 },
-  { name: "paid client screenshot", category: 1 },
-  { name: "investor accounts", category: 1 },
-  { name: "hesdge signals - excel", category: 1 },
-  { name: "hedge signals - web", category: 1 },
-  { name: "xauud - performance ", category: 1 },
-  { name: "Shop 3", category: 2 },
-  { name: "Shop 4", category: 2 },
-  { name: "Shop 5", category: 2 },
-  { name: "Shop 6", category: 2 },
-  { name: "Shop 3", category: 2 },
-  { name: "tab format", category: 1 },
-  { name: "web format", category: 3 },
-  { name: "Copy trade performance", category: 3 },
-]);
+const isTranslated = ref(colors.value.map(() => true)); // Use colors.value to access the array
 
-let currentCategoryIndex = ref(0); // Initialize with the first category
-
-const selectCategory = (categoryIndex) => {
-  currentCategoryIndex.value = categoryIndex;
+const removeTranslate = (index) => {
+  isTranslated.value[index] = false;
 };
 
-const displayedTracks = computed(() => {
-  return tracks.value.filter(
-    (track) => track.category === currentCategoryIndex.value
-  );
-});
-
-onMounted(() => {
-  // Initialize the shops to display for the first category when the component is mounted
-  // You can add more initialization logic here if needed
-  const initialCategory = category[0];
-  if (initialCategory) {
-    currentCategoryIndex.value = category.indexOf(initialCategory);
-  }
-});
+const addTranslate = (index) => {
+  isTranslated.value[index] = true;
+};
 </script>
+
+<style>
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 255, 255, 0.8) 10%,
+    rgba(0, 255, 255, 1) 20%,
+    rgba(0, 200, 255, 1) 30%,
+    rgba(0, 150, 255, 1) 50%,
+    rgba(0, 200, 255, 1) 75%,
+    rgba(0, 255, 255, 1) 85%,
+    rgba(0, 255, 255, 0.8) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.transition-transform {
+  transition-property: transform;
+}
+</style>
