@@ -135,8 +135,11 @@
     v-if="isModalOpen"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
   >
-    <div class="bg-white p-4 rounded-md w-1/2">
-      <h3 class="text-xl font-semibold mb-2">{{ modalTitle }}</h3>
+    <div class="bg-white p-4 rounded-md lg:w-1/2 h-2/3 overflow-y-auto">
+      <div class="flex justify-between">
+        <h3 class="text-xl font-semibold mb-2">{{ modalTitle }}</h3>
+        <button @click="closeModal" class="text-red-500">close</button>
+      </div>
       <div v-for="(detail, index) in modalDetails.details" :key="index">
         <component
           :is="detail.type === 'heading' ? 'h1' : 'p'"
@@ -149,7 +152,6 @@
           {{ detail.text }}
         </component>
       </div>
-      <button @click="closeModal" class="text-red-500">close</button>
     </div>
   </div>
 </template>
