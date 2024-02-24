@@ -13,10 +13,10 @@
           financial future</span
         >
       </h1>
-      <p class="py-5 text-lg">
-        Discover a world of financial opportunities with Pro Forex Investments.
+      <p class="max-lg:p-5 py-5  text-lg">
+        Discover a world of financial opportunities with Sakiwa capital Investments.
       </p>
-      <div class="flex gap-5">
+      <div class="flex max-lg:justify-center gap-5">
         <router-link
           :to="{ name: 'home' }"
           class="bg-slate-400 text-white p-2 rounded-md"

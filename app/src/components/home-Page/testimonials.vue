@@ -11,10 +11,10 @@
         <section
           v-for="(testimonial, index) in testimonials"
           :key="index"
-          class="flex-shrink-0 rounded-md border relative md:shadow-xl md:w-1/2"
+          class="rounded-md border relative md:shadow-xl"
         >
           <div
-            class="flex flex-col md:flex-row lg:w-[540px] w-screen items-center justify-center md:w-full"
+            class="flex flex-col md:flex-row w-screen items-center justify-center md:w-full"
           >
             <div
               class="flex items-center justify-center w-24 h-24 rounded-full"

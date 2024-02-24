@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
     <div
-      class="tradingview-widget-container max-w-7xl"
+      class="tradingview-widget-container max-w-7xl p-4"
       style="height: 500px; width: 100%"
     >
       <div :id="widgetId" style="height: calc(100% - 32px); width: 100%"></div>
