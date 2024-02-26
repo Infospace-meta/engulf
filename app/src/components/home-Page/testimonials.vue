@@ -44,28 +44,28 @@
 import { ref } from "vue";
 const testimonials = ref([
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 1",
     name: "immanuel Kimani",
     quote:
       '"Our primary focus is on providing top-notch investment services. With ProForex, you can trust that your investments are in capable hands."',
   },
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 2",
     name: "immanuel Kimani",
     quote:
       "Our primary focus is on providing top-notch investment services. With ProForex, you can trust that your investments are in capable hands.",
   },
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 3",
     name: "immanuel Kimani",
     quote:
       "Our primary focus is on providing top-notch investment services. With ProForex, you can trust that your investments are in capable hands.",
   },
   {
-    imageUrl: "/src/assets/images/image2.jpg",
+    imageUrl: "src/assets/images/image2.jpg",
     altText: "Tailor Service 4",
     name: "immanuel Kimani",
     quote:

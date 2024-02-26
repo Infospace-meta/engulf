@@ -12,6 +12,11 @@
 import { RouterView } from "vue-router";
 import Header from "./components/header.vue";
 import Footer from "./components/footer.vue";
-</script>
+import { onMounted } from "vue";
 
-<style scoped></style>
+const title = "Sakiwa capital Traders Forex";
+
+onMounted(() => {
+  document.title = title;
+});
+</script>
