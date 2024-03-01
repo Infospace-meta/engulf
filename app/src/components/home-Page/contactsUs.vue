@@ -3,9 +3,7 @@
     <div class="mx-auto flex flex-col justify-center">
       <h1 class="text-3xl">Let’s connect!</h1>
       <p class="text-lg">
-        On Pinterest, inspiration comes in the form of great content from
-        creators like you. And we really value your feedback. WDYT? We’d love to
-        hear from you!
+        We at Sakiwa are here to help you. contact if you have an inquiries
       </p>
     </div>
     <div class="p-40">

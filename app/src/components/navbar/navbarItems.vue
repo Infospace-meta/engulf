@@ -32,7 +32,10 @@
       @click="toggleMenu"
     >
       <span class="sr-only">Open main menu</span>
-      <h1 class="text-xl mr-4 text-gray-900 hover:text-blue-700">Menu</h1>
+      <h1 class="text-4xl font-bold mr-4 text-gray-900 hover:text-indigo-700">
+        <!-- Display hamburger icon when menu is closed, and 'x' when menu is open -->
+        {{ close ? "&#9776;" : "&cross;" }}
+      </h1>
     </button>
   </div>
 </template>
